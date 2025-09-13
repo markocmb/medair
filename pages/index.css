@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 5vw;
+  background-color: #fff;
+  color: #000000;
+  min-height: 100vh;
+}
+.header {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 1rem;
+  font-weight: bold;
+  outline: none;
+  padding: 0.25rem;
+  border: 1px solid transparent;
+}
+.header:focus {
+  border: 1px dashed #000000;
+}
+.names {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.names .label {
+  font-weight: bold;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  outline: none;
+  padding: 0.25rem;
+  border: 1px solid transparent;
+  display: inline-block;
+}
+.names .label:focus {
+  border: 1px dashed #000000;
+}
+.names input,
+.names select {
+  border: none;
+  border-bottom: 2px solid #000000;
+  width: clamp(150px, 40vw, 200px);
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  padding: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+.names .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.box {
+  border: 2px solid #000000;
+  padding: 1rem;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+.box h2 {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(0.9rem, 3vw, 1.125rem);
+  border-bottom: 1px solid #000000;
+  padding-bottom: 0.5rem;
+  overflow-wrap: break-word;
+  outline: none;
+  padding: 0.25rem;
+  border: 1px solid transparent;
+}
+.box h2:focus {
+  border: 1px dashed #000000;
+}
+.box textarea {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: 3rem;
+  width: calc(100% - 2rem);
+  height: calc(100% - 4rem);
+  border: none;
+  resize: none;
+  font-size: clamp(0.8rem, 2.5vw, 0.875rem);
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  outline: none;
+  padding: 0.5rem;
+  touch-action: manipulation;
+}
+.box textarea:focus {
+  border: 1px dashed #000000;
+}
+.box .delete-box {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box .delete-box:hover {
+  background-color: #c82333;
+}
+.box .delete-box svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+.box .hover-trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+}
+.box .hover-trigger:hover ~ .delete-box,
+.box .delete-box:hover {
+  opacity: 1;
+}
+/* Touch support for mobile */
+.box.delete-box-visible .delete-box {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  body {
+    margin: 3vw;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .box {
+    height: 200px;
+  }
+  .box textarea {
+    height: calc(100% - 3.5rem);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .box {
+    height: 180px;
+  }
+  .box textarea {
+    height: calc(100% - 3.5rem);
+  }
+}
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+.button-container button,
+.button-container select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.button-container button:hover {
+  background-color: #0056b3;
+}
+.button-container select {
+  background-color: #6c757d;
+}
+.button-container select:hover {
+  background-color: #5a6268;
+}
+.button-container .delete-sheet {
+  background-color: #dc3545;
+}
+.button-container .delete-sheet:hover {
+  background-color: #c82333;
+}
