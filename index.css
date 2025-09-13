@@ -42,7 +42,6 @@ body {
 .names select {
   border: none;
   border-bottom: 2px solid #000000;
-  width: clamp(150px, 40vw, 200px);
   font-size: clamp(0.9rem, 3vw, 1rem);
   padding: 0.5rem;
   overflow: hidden;
@@ -60,6 +59,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 .box {
   border: 2px solid #000000;
@@ -118,6 +119,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 }
 .box .delete-box:hover {
   background-color: #c82333;
